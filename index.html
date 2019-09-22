@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Trivia Game</title>
+</head>
+
+<body background = "https://wallpapercave.com/wp/tekM38P.jpg">
+    <div class = "container , text-center">
+        <div class = "jumbotron">
+            <strong><h1>UEFA Champions League Trivia</h1></strong><hr>
+            <p>Since 1956, the European Champions League competition has seen some of the most memeorable moments and legendary players that has ever featured in professional sports. This quiz will test you general knowledge of this major tournament. You will have ninety seconds to answer all the questions on the page. Have fun!</p><hr>
+            <button id = "start-game" type="button" class="btn btn-light btn-lg">Start</button>
+            <div id = "game-timer"></div>
+        </div>
+
+        <div class = "card , text-center">
+            <h3 class = "card-header">Questions</h3>
+            <div class = "card-body" id = soccer-questions><p></p></div>
+        </div><br>
+
+        <div id = "game-score" class = "card">
+            <h3 class = "card-header">Scoresheet</h3><br>
+            <h4 id = "user-wins">Correct: </h4><br>
+            <h4 id = "user-losses">Incorrect: </h4><br>
+        </div><br>
+
+        <footer class = "jumbotron , text-center">
+            <h3>© 2019 Alexander Rocha</h3>
+        </footer>
+
+    </div>
+
+    <script type = "text/javascript" src = "C:\Users\rocha\Desktop\My Bootcamp Assignments\Basic-Trivia-Game\assets\javascript\game.js"></script>
+    
+</body>
+
+</html>
