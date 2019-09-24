@@ -44,7 +44,7 @@ $(document).ready(function () {
     // Remove Start button and add timer from Javascript into HTML when clicked
     $("#start-game").click(function () {
         $("#start-game , #history-bio").remove();
-        $("#game-timer").html('<h2>Time Remaining: <span id = "triviaTimer">90</span> Seconds</h2><br>');
+        $("#game-timer").html('<h3>Time Remaining: 90 Seconds</h3>');
         triviaCountdown();
 
         // Display question header
@@ -104,9 +104,10 @@ $(document).ready(function () {
         intervalId = setInterval(decrement, 1000);
     }
 
+    // Set up timer countdown
     function decrement() {
         triviaTimer--;
-        $("#game-timer").html('<h4>Time Remaining: ' + triviaTimer + " Seconds</h4>");
+        $("#game-timer").html('<h3>Time Remaining: ' + triviaTimer + " Seconds</h3>");
 
         if (triviaTimer === 0) {
             stop();
@@ -117,7 +118,6 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
 
-
     function pointTally() {
         $("#user-right").html("<h4>Right Answers: <h4>" + userRight);
         $("#user-wrong").html("<h4>Wrong Answers: <h4>" + userWrong);
@@ -125,14 +125,14 @@ $(document).ready(function () {
     }
 
     function scoreSheet() {
-        var answer1 = $("input[name='answer1']:checked").val();
-        var answer2 = $("input[name='answer2']:checked").val();
-        var answer3 = $("input[name='answer3']:checked").val();
-        var answer4 = $("input[name='answer4']:checked").val();
-        var answer5 = $("input[name='answer5']:checked").val();
+        var myAnswer1 = $("input[name='answer1']:checked").val();
+        var myAnswer2 = $("input[name='answer2']:checked").val();
+        var myAnswer3 = $("input[name='answer3']:checked").val();
+        var myAnswer4 = $("input[name='answer4']:checked").val();
+        var myAnswer5 = $("input[name='answer5']:checked").val();
 
         // Question 1
-        if (answer1 == questions[0].q1.answer) {
+        if (myAnswer1 == questions[0].q1.answer) {
             userRight++;
         }
         else {
@@ -140,7 +140,7 @@ $(document).ready(function () {
         }
 
         // Question 2
-        if (answer2 == questions[0].q2.answer) {
+        if (myAnswer2 == questions[0].q2.answer) {
             userRight++;
         }
         else {
@@ -148,14 +148,14 @@ $(document).ready(function () {
         }
 
         // Question 3
-        if (answer3 == questions[0].q3.answer) {
+        if (myAnswer3 == questions[0].q3.answer) {
             userRight++;
         }
         else {
             userWrong++;
         }
         // Question 4
-        if (answer4 == questions[0].q4.answer) {
+        if (myAnswer4 == questions[0].q4.answer) {
             userRight++;
         }
         else {
@@ -163,7 +163,7 @@ $(document).ready(function () {
         }
 
         // Question 5
-        if (answer5 == questions[0].q5.answer) {
+        if (myAnswer5 == questions[0].q5.answer) {
             userRight++;
         }
         else {
@@ -171,7 +171,7 @@ $(document).ready(function () {
         }
 
         // Questions Missed
-        if (answer1, answer2, answer3, answer4, answer5 === undefined) {
+        if (myAnswer1, myAnswer2, myAnswer3, myAnswer4, myAnswer5 === undefined) {
             userMissed++;
         }
     };
