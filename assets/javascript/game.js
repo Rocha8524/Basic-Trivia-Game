@@ -38,12 +38,13 @@ $(document).ready(function () {
     var userRight = 0;
     var userWrong = 0;
     var userMissed = 0;
+    var intervalId;
     var triviaTimer = 90;
 
     // Remove Start button and add timer from Javascript into HTML when clicked
     $("#start-game").click(function () {
         $("#start-game , #history-bio").remove();
-        $("#game-timer").html('<h2>Time Remaining: <span id = "counter">90</span> Seconds</h2><br>');
+        $("#game-timer").html('<h2>Time Remaining: <span id = "triviaTimer">90</span> Seconds</h2><br>');
         triviaCountdown();
 
         // Display question header
@@ -99,14 +100,23 @@ $(document).ready(function () {
 
     // Set up timer function for trivia game
     function triviaCountdown() {
-        triviaTimer--;
-        timer = setInterval (triviaCountdown, 1000);
-        $("#game-timer").html('<h4>Time Remaining: <span id = "counter">90</span> Seconds</h4>');
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
 
-        if (triviaTimer == 0) {
-            clearInterval(triviaTimer);
+    function decrement() {
+        triviaTimer--;
+        $("#game-timer").html('<h4>Time Remaining: ' + triviaTimer + " Seconds</h4>");
+
+        if (triviaTimer === 0) {
+            stop();
         }
-    };
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+    }
+
 
     function pointTally() {
         $("#user-right").html("<h4>Right Answers: <h4>" + userRight);
