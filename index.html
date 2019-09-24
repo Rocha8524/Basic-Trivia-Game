@@ -12,24 +12,27 @@
 <body background = "https://wallpapercave.com/wp/tekM38P.jpg">
     <div class = "container , text-center">
         <div class = "jumbotron">
-            <strong><h1>UEFA Champions League Trivia</h1></strong><hr>
-            <p>Since 1956, the European Champions League competition has seen some of the most memeorable moments and legendary players that has ever featured in professional sports. This quiz will test you general knowledge of this major tournament. You will have ninety seconds to answer all the questions on the page. Have fun!</p><hr>
+            <strong><h1 >UEFA Champions League Trivia</h1></strong><hr>
             <button id = "start-game" type="button" class="btn btn-light btn-lg">Start</button>
             <div id = "game-timer"></div>
         </div>
 
-        <div class = "card , text-center">
-            <h3 class = "card-header">Questions</h3>
-            <div class = "card-body" id = soccer-questions><p></p></div>
+        <div class = "card">
+            <div id = "question-header" class = "card-header"><h3>Brief History</h3></div>
+            <div id = "card-info" class = "card-body">
+                <p id = "history-bio">Since 1956, the European Champions League competition has seen some of the most memeorable moments and legendary players that has ever featured in professional sports. This quiz will test you general knowledge of this major tournament. You will have ninety seconds to answer all the questions on the page. Have fun!</p>
+                <p id = "question-1"></p>
+                <p id = "question-2"></p>
+                <p id = "question-3"></p>
+                <p id = "question-4"></p>
+                <p id = "question-5"></p>
+                <div id = "submit"></div>
+            </div>
         </div><br>
 
-        <div id = "game-score" class = "card">
-            <h3 class = "card-header">Scoresheet</h3><br>
-            <h4 id = "user-wins">Correct: </h4><br>
-            <h4 id = "user-losses">Incorrect: </h4><br>
-        </div><br>
-
-        <footer class = "jumbotron , text-center">
+        <div id = "Scoresheet"></div><br>
+        
+        <footer id = "copyright" class = "jumbotron , text-center">
             <h3>© 2019 Alexander Rocha</h3>
         </footer>
 
