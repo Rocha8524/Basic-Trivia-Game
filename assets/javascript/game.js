@@ -32,7 +32,6 @@ $(document).ready(function () {
             choices: ["Benfica", "Juventus", "Bayern Munich", "Real Madrid"],
             answer: "Juventus",
         },
-
     }];
 
     // Set up variables for game
@@ -83,17 +82,16 @@ $(document).ready(function () {
             + questions[0].q5.choices[0] + "</label>" + "<input type='radio' name='answer5' value='1'>" + "<label>"
             + questions[0].q5.choices[1] + "</label>" + "<input type='radio' name='answer5' value='2'>" + "<label>"
             + questions[0].q5.choices[2] + "</label>" + "<input type='radio' name='answer5' value='3'>" + "<label>"
-            + questions[0].q5.choices[3] + "</label><br>");
+            + questions[0].q5.choices[3] + "</label><br><hr>");
 
         // Submit button
-        $("#submit").html("<button id ='done' class = 'btn'>Done</button>");
+        $("#submit").html("<button id = 'finished' class = 'btn'>Done</button>");
 
         // Submit button will tally answers right, wrong and unanswered and display the results when user clicks Done button
-        $("#done").on("click", function () {
+        $("#finished").on("click", function () {
             $("#game-timer , #submit").remove();
             $(".card-header").html("<h3>Scoresheet<h3>");
             $("#question-1 , #question-2, #question-3, #question-4 , #question-5").remove();
-            $("#user-right , user-wrong , user-missing").html("<h4>Right Answers: <h4><br><h4>Wrong Answers: <h4><br><h4>Missing Answers: <h4>");
             pointTally();
             scoreSheet();
         });
@@ -102,19 +100,69 @@ $(document).ready(function () {
     // Set up timer function for trivia game
     function triviaCountdown() {
         triviaTimer--;
-        // timer = setInterval (triviaCountdown, 1000);
+        timer = setInterval (triviaCountdown, 1000);
         $("#game-timer").html('<h4>Time Remaining: <span id = "counter">90</span> Seconds</h4>');
 
         if (triviaTimer == 0) {
-            triviaFinished();
+            clearInterval(triviaTimer);
         }
     };
 
-function pointTally() {
-    $("user-right").html("Right Answers: " + userRight);
-    $("user-wrong").html("Wrong Answers: " + userWrong);
-    $("#user-missing").html("Missing Answers: " + userMissed);
-}
+    function pointTally() {
+        $("#user-right").html("<h4>Right Answers: <h4>" + userRight);
+        $("#user-wrong").html("<h4>Wrong Answers: <h4>" + userWrong);
+        $("#user-missing").html("<h4>Missing Answers: <h4>" + userMissed);
+    }
 
+    function scoreSheet() {
+        var answer1 = $("input[name='answer1']:checked").val();
+        var answer2 = $("input[name='answer2']:checked").val();
+        var answer3 = $("input[name='answer3']:checked").val();
+        var answer4 = $("input[name='answer4']:checked").val();
+        var answer5 = $("input[name='answer5']:checked").val();
 
+        // Question 1
+        if (answer1 == questions[0].q1.answer) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+        }
+
+        // Question 2
+        if (answer2 == questions[0].q2.answer) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+        }
+
+        // Question 3
+        if (answer3 == questions[0].q3.answer) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+        }
+        // Question 4
+        if (answer4 == questions[0].q4.answer) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+        }
+
+        // Question 5
+        if (answer5 == questions[0].q5.answer) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+        }
+
+        // Questions Missed
+        if (answer1, answer2, answer3, answer4, answer5 === undefined) {
+            userMissed++;
+        }
+    };
 });
