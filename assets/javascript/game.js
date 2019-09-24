@@ -52,8 +52,8 @@ $(document).ready(function () {
 
         // Question 1
         $("#question-1").html("<h5>" + questions[0].q1.question + "</h5>" + "<input type='radio' name='answer1' value='0'>" + "<label>"
-            + questions[0].q1.choices[0] + "</label> "+ "<input type='radio' name='answer1' value='1'>" + "<label>" 
-            + questions[0].q1.choices[1] + "</label> "+ "<input type='radio' name='answer1' value='2'>" + "<label>" 
+            + questions[0].q1.choices[0] + "</label> " + "<input type='radio' name='answer1' value='1'>" + "<label>"
+            + questions[0].q1.choices[1] + "</label> " + "<input type='radio' name='answer1' value='2'>" + "<label>"
             + questions[0].q1.choices[2] + "</label> " + "<input type='radio' name='answer1' value='3'>" + "<label>"
             + questions[0].q1.choices[3] + "</label><br>");
 
@@ -65,34 +65,38 @@ $(document).ready(function () {
             + questions[0].q2.choices[3] + "<label><br>");
 
         // Question 3
-        $("#question-3").html("<h5>" + questions[0].q3.question + "</h5>" + "<input type='radio' name='answer3' value='0'>" + "<label>" 
-            + questions[0].q3.choices[0] + "</label>"+ "<input type='radio' name='answer3' value='1'>" + "<label>" 
-            + questions[0].q3.choices[1] + "</label>"+ "<input type='radio' name='answer3' value='2'>" + "<label>" 
-            + questions[0].q3.choices[2] + "</label>"+ "<input type='radio' name='answer3' value='3'>" + "<label>" 
+        $("#question-3").html("<h5>" + questions[0].q3.question + "</h5>" + "<input type='radio' name='answer3' value='0'>" + "<label>"
+            + questions[0].q3.choices[0] + "</label>" + "<input type='radio' name='answer3' value='1'>" + "<label>"
+            + questions[0].q3.choices[1] + "</label>" + "<input type='radio' name='answer3' value='2'>" + "<label>"
+            + questions[0].q3.choices[2] + "</label>" + "<input type='radio' name='answer3' value='3'>" + "<label>"
             + questions[0].q3.choices[3] + "</label><br>");
 
         // Question 4
-        $("#question-4").html("<h5>" + questions[0].q4.question + "</h5>" + "<input type='radio' name='answer4' value='0'>" + "<label>" 
-            + questions[0].q4.choices[0] + "</label>"+ "<input type='radio' name='answer4' value='1'>" + "<label>" 
+        $("#question-4").html("<h5>" + questions[0].q4.question + "</h5>" + "<input type='radio' name='answer4' value='0'>" + "<label>"
+            + questions[0].q4.choices[0] + "</label>" + "<input type='radio' name='answer4' value='1'>" + "<label>"
             + questions[0].q4.choices[1] + "</label>"
             + "<input type='radio' name='answer4' value='2'>" + "<label>" + questions[0].q4.choices[2] + "</label>"
             + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[0].q4.choices[3] + "</label><br>");
 
         // Question 5
-        $("#question-5").html("<h5>" + questions[0].q5.question + "</h5>" + "<input type='radio' name='answer5' value='0'>" + "<label>" 
-            + questions[0].q5.choices[0] + "</label>"+ "<input type='radio' name='answer5' value='1'>" + "<label>" 
-            + questions[0].q5.choices[1] + "</label>"+ "<input type='radio' name='answer5' value='2'>" + "<label>" 
-            + questions[0].q5.choices[2] + "</label>"+ "<input type='radio' name='answer5' value='3'>" + "<label>" 
+        $("#question-5").html("<h5>" + questions[0].q5.question + "</h5>" + "<input type='radio' name='answer5' value='0'>" + "<label>"
+            + questions[0].q5.choices[0] + "</label>" + "<input type='radio' name='answer5' value='1'>" + "<label>"
+            + questions[0].q5.choices[1] + "</label>" + "<input type='radio' name='answer5' value='2'>" + "<label>"
+            + questions[0].q5.choices[2] + "</label>" + "<input type='radio' name='answer5' value='3'>" + "<label>"
             + questions[0].q5.choices[3] + "</label><br>");
 
         // Submit button
-        $("#submit").html("<button id='done' class='btn'>Done</button>");
+        $("#submit").html("<button id ='done' class = 'btn'>Done</button>");
 
-        // Click event runs keepingScore() and displayResults() when user clicks Done button
+        // Submit button will tally answers right, wrong and unanswered and display the results when user clicks Done button
         $("#done").on("click", function () {
-
+            $("#game-timer , #submit").remove();
+            $(".card-header").html("<h3>Scoresheet<h3>");
+            $("#question-1 , #question-2, #question-3, #question-4 , #question-5").remove();
+            $("#user-right , user-wrong , user-missing").html("<h4>Right Answers: <h4><br><h4>Wrong Answers: <h4><br><h4>Missing Answers: <h4>");
+            pointTally();
+            scoreSheet();
         });
-
     });
 
     // Set up timer function for trivia game
@@ -105,5 +109,12 @@ $(document).ready(function () {
             triviaFinished();
         }
     };
+
+function pointTally() {
+    $("user-right").html("Right Answers: " + userRight);
+    $("user-wrong").html("Wrong Answers: " + userWrong);
+    $("#user-missing").html("Missing Answers: " + userMissed);
+}
+
 
 });
