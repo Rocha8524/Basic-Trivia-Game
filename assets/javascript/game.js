@@ -29,7 +29,7 @@ $(document).ready(function () {
 
         q5: {
             question: "5. Which of these clubs have never won a Champions League title in back-to-back seasons?",
-            choices: ["Benfica", "Juventus", "Bayern Munich", "Real Madrid"],
+            choices: ["Benfica", "Bayern Munich", "Juventus", "Real Madrid"],
             answer: "Juventus",
         },
     }];
@@ -37,7 +37,6 @@ $(document).ready(function () {
     // Set up variables for game
     var userRight = 0;
     var userWrong = 0;
-    var userMissed = 0;
     var intervalId;
     var triviaTimer = 90;
 
@@ -109,21 +108,28 @@ $(document).ready(function () {
         triviaTimer--;
         $("#game-timer").html('<h3>Time Remaining: ' + triviaTimer + " Seconds</h3>");
 
+        // Set to automatic direct to result page when timer reaches zero
         if (triviaTimer === 0) {
             stop();
+            $("#game-timer , #submit").remove();
+            $(".card-header").html("<h3>Scoresheet<h3>");
+            $("#question-1 , #question-2, #question-3, #question-4 , #question-5").remove();
+            pointTally();
+            scoreSheet();
+
+            function stop() {
+                clearInterval(intervalId);
+            }
         }
     }
 
-    function stop() {
-        clearInterval(intervalId);
-    }
-
+    // Display results on the next page
     function pointTally() {
         $("#user-right").html("<h4>Right Answers: <h4>" + userRight);
         $("#user-wrong").html("<h4>Wrong Answers: <h4>" + userWrong);
-        $("#user-missing").html("<h4>Missing Answers: <h4>" + userMissed);
     }
 
+    // Keep track of right and wrong answers given
     function scoreSheet() {
         var myAnswer1 = $("input[name='answer1']:checked").val();
         var myAnswer2 = $("input[name='answer2']:checked").val();
@@ -131,48 +137,43 @@ $(document).ready(function () {
         var myAnswer4 = $("input[name='answer4']:checked").val();
         var myAnswer5 = $("input[name='answer5']:checked").val();
 
-        // Question 1
+        // Question 1 Response
         if (myAnswer1 == questions[0].q1.answer) {
             userRight++;
         }
-        else {
+        else if (myAnswer1 !== questions[0].q1.answer && undefined) {
             userWrong++;
         }
 
-        // Question 2
+        // Question 2 Response
         if (myAnswer2 == questions[0].q2.answer) {
             userRight++;
         }
-        else {
+        else if (myAnswer2 !== questions[0].q2.answer && undefined) {
             userWrong++;
         }
 
-        // Question 3
+        // Question 3 Response
         if (myAnswer3 == questions[0].q3.answer) {
             userRight++;
         }
-        else {
+        else if (myAnswer3 !== questions[0].q3.answer && undefined) {
             userWrong++;
         }
-        // Question 4
+        // Question 4 Response
         if (myAnswer4 == questions[0].q4.answer) {
             userRight++;
         }
-        else {
+        else if (myAnswer4 !== questions[0].q4.answer && undefined) {
             userWrong++;
         }
 
-        // Question 5
+        // Question 5 Response
         if (myAnswer5 == questions[0].q5.answer) {
             userRight++;
         }
-        else {
+        else if (myAnswer5 !== questions[0].q5.answer && undefined) {
             userWrong++;
-        }
-
-        // Questions Missed
-        if (myAnswer1, myAnswer2, myAnswer3, myAnswer4, myAnswer5 === undefined) {
-            userMissed++;
         }
     };
 });
