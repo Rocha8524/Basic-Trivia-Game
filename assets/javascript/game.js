@@ -47,7 +47,7 @@ $("#start-game").click(function () {
 
     // Question 1
     $("#question-1").html("<h5>" + questions[0].question + "</h5>");
-    $("#answer-1").html("<input type='radio' name = 'answer1' id ='q1a' value='0'>" + "<label>"
+    $("#answer-1").html("<input type='radio' name = 'answer-1' id ='q1a' value='0'>" + "<label>"
         + questions[0].choices[0] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1b' value ='1'>" + "<label>"
         + questions[0].choices[1] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1c' value ='2'>" + "<label>"
         + questions[0].choices[2] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1d' value ='3'>" + "<label>"
@@ -55,7 +55,7 @@ $("#start-game").click(function () {
 
     // Question 2
     $("#question-2").html("<h5>" + questions[1].question + "</h5>");
-    $("#answer-2").html("<input type='radio' name = 'answer2' id ='q2a' value='0'>" + "<label>"
+    $("#answer-2").html("<input type='radio' name = 'answer-2' id ='q2a' value='0'>" + "<label>"
         + questions[1].choices[0] + "</label>" + "<input type = 'radio' name = 'answer-2' id ='q2b' value='1'>" + "<label>"
         + questions[1].choices[1] + "</label>" + "<input type='radio' name = 'answer-2' id ='q2c' value='2'>" + "<label>"
         + questions[1].choices[2] + "</label>" + "<input type='radio' name = 'answer-2' id ='q2d' value='3'>" + "<label>"
@@ -63,7 +63,7 @@ $("#start-game").click(function () {
 
     // Question 3
     $("#question-3").html("<h5>" + questions[2].question + "</h5>");
-    $("#answer-3").html("<input type='radio' name = 'answer3' id ='q3a' value='0'>" + "<label>"
+    $("#answer-3").html("<input type='radio' name = 'answer-3answer3' id ='q3a' value='0'>" + "<label>"
         + questions[2].choices[0] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3b' value='1'>" + "<label>"
         + questions[2].choices[1] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3c' value='2'>" + "<label>"
         + questions[2].choices[2] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3d' value='3'>" + "<label>"
@@ -71,7 +71,7 @@ $("#start-game").click(function () {
 
     // Question 4
     $("#question-4").html("<h5>" + questions[4].question + "</h5>");
-    $("#answer-4").html("<input type='radio' name = 'answer4' id ='q4a' value='0'>" + "<label>"
+    $("#answer-4").html("<input type='radio' name = 'answer-4' id ='q4a' value='0'>" + "<label>"
         + questions[3].choices[0] + "</label>" + "<input type='radio' name = 'answer-4' id ='q4b' value='1'>" + "<label>"
         + questions[3].choices[1] + "</label>"
         + "<input type='radio' name = 'answer-4' id ='q4c' value='2'>" + "<label>" + questions[3].choices[2] + "</label>"
@@ -79,7 +79,7 @@ $("#start-game").click(function () {
 
     // Question 5
     $("#question-5").html("<h5>" + questions[4].question + "</h5>");
-    $("#answer-5").html("<input type='radio' name = 'answer5' id ='q5a'      value='0'>" + "<label>"
+    $("#answer-5").html("<input type='radio' name = 'answer-5' id ='q5a'      value='0'>" + "<label>"
         + questions[4].choices[0] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5b' value='1'>" + "<label>"
         + questions[4].choices[1] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5c' value='2'>" + "<label>"
         + questions[4].choices[2] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5d' value='3'>" + "<label>"
@@ -131,17 +131,17 @@ function pointTally() {
 
 //Keep track of right and wrong answers given
 function scoreSheet() {
-    var myAnswer1 = $("input[name ='answer1']:checked").val();
-    var myAnswer2 = $("input[name ='answer2']:checked").val();
-    var myAnswer3 = $("input[name ='answer3']:checked").val();
-    var myAnswer4 = $("input[name ='answer4']:checked").val();
-    var myAnswer5 = $("input[name ='answer5']:checked").val();
+    var myanswer1 = $("input[name ='answer-1']:checked").val();
+    var myanswer2 = $("input[name ='answer-2']:checked").val();
+    var myAnswer3 = $("input[name ='answer-3']:checked").val();
+    var myAnswer4 = $("input[name ='answer-4']:checked").val();
+    var myAnswer5 = $("input[name ='answer-5']:checked").val();
 
     // Question 1 Response
-    if (myAnswer1 == questions[0].answer) {
+    if (myanswer1 == questions[0].answer) {
         userRight++;
     }
-    else if (myAnswer1 === undefined) {
+    else if (myanswer1 === undefined) {
         userMissed++;
     }
     else {
@@ -149,10 +149,10 @@ function scoreSheet() {
     }
 
     // Question 2 Response
-    if (myAnswer2 == questions[1].answer) {
+    if (myanswer2 == questions[1].answer) {
         userRight++;
     }
-    else if (myAnswer2 === undefined) {
+    else if (myanswer2 === undefined) {
         userMissed++;
     }
     else {
