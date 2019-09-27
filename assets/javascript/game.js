@@ -1,7 +1,4 @@
-// Make function available after the document is loaded.
-$(document).ready(function () {
-
-    // Set up questions and answers array used for Trivia Game
+// Set up questions and answers array used for Trivia Game
     var questions = [{
         q1: {
             question: "1. What was the first club to win the Champions League competition?",
@@ -50,38 +47,38 @@ $(document).ready(function () {
         $(".card-header").html("<h3>Questions<h3>")
 
         // Question 1
-        $("#question-1").html("<h5>" + questions[0].q1.question + "</h5>" + "<input type='radio' name='answer1' value='0'>" + "<label>"
-            + questions[0].q1.choices[0] + "</label> " + "<input type='radio' name='answer1' value='1'>" + "<label>"
-            + questions[0].q1.choices[1] + "</label> " + "<input type='radio' name='answer1' value='2'>" + "<label>"
-            + questions[0].q1.choices[2] + "</label> " + "<input type='radio' name='answer1' value='3'>" + "<label>"
+        $("#question-1").html("<h5>" + questions[0].q1.question + "</h5>" + "<input type='radio' name = 'answer-1' id ='q1a' value='0'>" + "<label>"
+            + questions[0].q1.choices[0] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1b' value ='1'>" + "<label>"
+            + questions[0].q1.choices[1] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1c' value ='2'>" + "<label>"
+            + questions[0].q1.choices[2] + "</label> " + "<input type='radio' name = 'answer-1' id = 'q1d' value ='3'>" + "<label>"
             + questions[0].q1.choices[3] + "</label><br>");
 
         // Question 2
-        $("#question-2").html("<h5>" + questions[0].q2.question + "</h5>" + "<input type='radio' name='answer2' value='0'>" + "<label>"
-            + questions[0].q2.choices[0] + "</label>" + "<input type='radio' name='answer2' value='1'>" + "<label>"
-            + questions[0].q2.choices[1] + "</label>" + "<input type='radio' name='answer2' value='2'>" + "<label>"
-            + questions[0].q2.choices[2] + "</label>" + "<input type='radio' name='answer2' value='3'>" + "<label>"
+        $("#question-2").html("<h5>" + questions[0].q2.question + "</h5>" + "<input type='radio' name = 'answer-2' id ='q2a' value='0'>" + "<label>"
+            + questions[0].q2.choices[0] + "</label>" + "<input type = 'radio' name = 'answer-2' id ='q2b' value='1'>" + "<label>"
+            + questions[0].q2.choices[1] + "</label>" + "<input type='radio' name = 'answer-2' id ='q2c' value='2'>" + "<label>"
+            + questions[0].q2.choices[2] + "</label>" + "<input type='radio' name = 'answer-2' id ='q2d' value='3'>" + "<label>"
             + questions[0].q2.choices[3] + "<label><br>");
 
         // Question 3
-        $("#question-3").html("<h5>" + questions[0].q3.question + "</h5>" + "<input type='radio' name='answer3' value='0'>" + "<label>"
-            + questions[0].q3.choices[0] + "</label>" + "<input type='radio' name='answer3' value='1'>" + "<label>"
-            + questions[0].q3.choices[1] + "</label>" + "<input type='radio' name='answer3' value='2'>" + "<label>"
-            + questions[0].q3.choices[2] + "</label>" + "<input type='radio' name='answer3' value='3'>" + "<label>"
+        $("#question-3").html("<h5>" + questions[0].q3.question + "</h5>" + "<input type='radio' name = 'answer-3' id ='q3a' value='0'>" + "<label>"
+            + questions[0].q3.choices[0] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3b' value='1'>" + "<label>"
+            + questions[0].q3.choices[1] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3c' value='2'>" + "<label>"
+            + questions[0].q3.choices[2] + "</label>" + "<input type='radio' name = 'answer-3' id ='q3d' value='3'>" + "<label>"
             + questions[0].q3.choices[3] + "</label><br>");
 
         // Question 4
-        $("#question-4").html("<h5>" + questions[0].q4.question + "</h5>" + "<input type='radio' name='answer4' value='0'>" + "<label>"
-            + questions[0].q4.choices[0] + "</label>" + "<input type='radio' name='answer4' value='1'>" + "<label>"
+        $("#question-4").html("<h5>" + questions[0].q4.question + "</h5>" + "<input type='radio' name = 'answer-4' id ='q4a' value='0'>" + "<label>"
+            + questions[0].q4.choices[0] + "</label>" + "<input type='radio' name = 'answer-4' id ='q4b' value='1'>" + "<label>"
             + questions[0].q4.choices[1] + "</label>"
-            + "<input type='radio' name='answer4' value='2'>" + "<label>" + questions[0].q4.choices[2] + "</label>"
-            + "<input type='radio' name='answer4' value='3'>" + "<label>" + questions[0].q4.choices[3] + "</label><br>");
+            + "<input type='radio' name = 'answer-4' id ='q4c' value='2'>" + "<label>" + questions[0].q4.choices[2] + "</label>"
+            + "<input type='radio' name = 'answer-4' id ='q4d' value='3'>" + "<label>" + questions[0].q4.choices[3] + "</label><br>");
 
         // Question 5
-        $("#question-5").html("<h5>" + questions[0].q5.question + "</h5>" + "<input type='radio' name='answer5' value='0'>" + "<label>"
-            + questions[0].q5.choices[0] + "</label>" + "<input type='radio' name='answer5' value='1'>" + "<label>"
-            + questions[0].q5.choices[1] + "</label>" + "<input type='radio' name='answer5' value='2'>" + "<label>"
-            + questions[0].q5.choices[2] + "</label>" + "<input type='radio' name='answer5' value='3'>" + "<label>"
+        $("#question-5").html("<h5>" + questions[0].q5.question + "</h5>" + "<input type='radio' name = 'answer-5' id ='q5a'      value='0'>" + "<label>"
+            + questions[0].q5.choices[0] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5b' value='1'>" + "<label>"
+            + questions[0].q5.choices[1] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5c' value='2'>" + "<label>"
+            + questions[0].q5.choices[2] + "</label>" + "<input type='radio' name = 'answer-5' id ='q5d' value='3'>" + "<label>"
             + questions[0].q5.choices[3] + "</label><br><hr>");
 
         // Submit button
@@ -92,8 +89,8 @@ $(document).ready(function () {
             $("#game-timer , #submit").remove();
             $(".card-header").html("<h3>Scoresheet<h3>");
             $("#question-1 , #question-2, #question-3, #question-4 , #question-5").remove();
-            pointTally();
             scoreSheet();
+            pointTally();
         });
     });
 
@@ -114,8 +111,8 @@ $(document).ready(function () {
             $("#game-timer , #submit").remove();
             $(".card-header").html("<h3>Scoresheet<h3>");
             $("#question-1 , #question-2, #question-3, #question-4 , #question-5").remove();
-            pointTally();
             scoreSheet();
+            pointTally();
 
             function stop() {
                 clearInterval(intervalId);
@@ -123,57 +120,118 @@ $(document).ready(function () {
         }
     }
 
-    // Display results on the next page
+    //Display results on the next page
     function pointTally() {
-        $("#user-right").html("<h4>Right Answers: <h4>" + userRight);
-        $("#user-wrong").html("<h4>Wrong Answers: <h4>" + userWrong);
+        $("#user-right").html("<h4>Right Answers: " + userRight + "<h4>");
+        $("#user-wrong").html("<h4>Wrong Answers: " + userWrong + "<h4>");
+    }
+    
+    //Keep track of right and wrong answers given
+    function scoreSheet() {
+        var myAnswer1 = $("input[id ='q1d']:checked").val();
+        var myAnswer2 = $("input[id ='q2a']:checked").val();
+        var myAnswer3 = $("input[id ='q3b']:checked").val();
+        var myAnswer4 = $("input[id ='q4d']:checked").val();
+        var myAnswer5 = $("input[id ='q5c']:checked").val();
+    
+    // Question 1 Response
+    if (myAnswer1 == questions[0].q1.answer) {
+        userRight++;
+    }
+    else if (myAnswer1 !== questions[0].q1.answer && undefined) {
+        userWrong++;
+    }
+    
+    // Question 2 Response
+    if (myAnswer2 == questions[0].q2.answer) {
+        userRight++;
+    }
+    else if (myAnswer2 !== questions[0].q2.answer && undefined) {
+        userWrong++;
+    }
+    
+    // Question 3 Response
+    if (myAnswer3 == questions[0].q3.answer) {
+        userRight++;
+    }
+    else if (myAnswer3 !== questions[0].q3.answer && undefined) {
+        userWrong++;
     }
 
-    // Keep track of right and wrong answers given
+    // Question 4 Response
+    if (myAnswer4 == questions[0].q4.answer) {
+        userRight++;
+    }
+    else if (myAnswer4 !== questions[0].q4.answer && undefined) {
+        userWrong++;
+    }
+    
+    // Question 5 Response
+    if (myAnswer5 == questions[0].q5.answer) {
+        userRight++;
+    }
+    else if (myAnswer5 !== questions[0].q5.answer && undefined) {
+        userWrong++;
+    }
+};
+
+    /* Keep track of right and wrong answers given
     function scoreSheet() {
-        var myAnswer1 = $("input[name='answer1']:checked").val();
-        var myAnswer2 = $("input[name='answer2']:checked").val();
-        var myAnswer3 = $("input[name='answer3']:checked").val();
-        var myAnswer4 = $("input[name='answer4']:checked").val();
-        var myAnswer5 = $("input[name='answer5']:checked").val();
+        //Question 1 Response
+        $.each($("input[id ='q1d']:checked"), function() {
+        if ($(this).val() === q1d) {
+            userRight++;
+        }
+        else {
+            userWrong++;
+            }
+        });
 
-        // Question 1 Response
-        if (myAnswer1 == questions[0].q1.answer) {
+        //Question 2 Response
+        $.each($("input[id ='q2a']:checked"), function() {
+        if ($(this).val() === q2a) {
             userRight++;
         }
-        else if (myAnswer1 !== questions[0].q1.answer && undefined) {
+        else {
             userWrong++;
+            }
+        });
+
+        //Question 3 Response
+        $.each($("input[id ='q3b']:checked"), function() {
+            if ($(this).val() === q3b) {
+                userRight++;
+            }
+            else {
+                userWrong++;
+            }
+        });
+
+        //Question 4 Response
+        $.each($("input[id ='q4d']:checked"), function() {
+            if ($(this).val() === q4d) {
+                userRight++;
+            }
+            else {
+                userWrong++;
+            }
+        });
+
+        //Question 5 Response
+        $.each($("input[id ='q5c']:checked"), function() {
+            if ($(this).val() === q5c) {
+                userRight++;
+            }
+            else {
+                userWrong++;
+            }
+        });
+
+        this.pointTally();
         }
 
-        // Question 2 Response
-        if (myAnswer2 == questions[0].q2.answer) {
-            userRight++;
-        }
-        else if (myAnswer2 !== questions[0].q2.answer && undefined) {
-            userWrong++;
-        }
-
-        // Question 3 Response
-        if (myAnswer3 == questions[0].q3.answer) {
-            userRight++;
-        }
-        else if (myAnswer3 !== questions[0].q3.answer && undefined) {
-            userWrong++;
-        }
-        // Question 4 Response
-        if (myAnswer4 == questions[0].q4.answer) {
-            userRight++;
-        }
-        else if (myAnswer4 !== questions[0].q4.answer && undefined) {
-            userWrong++;
-        }
-
-        // Question 5 Response
-        if (myAnswer5 == questions[0].q5.answer) {
-            userRight++;
-        }
-        else if (myAnswer5 !== questions[0].q5.answer && undefined) {
-            userWrong++;
-        }
-    };
-});
+        // Display results on the next page
+        function pointTally() {
+            $("#user-right").html("<h4>Right Answers: " + userRight + "<h4>");
+            $("#user-wrong").html("<h4>Wrong Answers: " + userWrong + "<h4>");
+        }*/
