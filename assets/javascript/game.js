@@ -1,63 +1,65 @@
 // Set up questions and answers array used for Trivia Game
-var questions = [{
-    question: "1. What was the first club to win the Champions League competition?",
-    choices: ["Benfica", "Barcelona", "Inter-Milan", "Real Madrid"],
-    answer: 3
-},
+var questions = [
 
-{
-    question: "2. Who was the first Dutch club to win the Champions League?",
-    choices: ["Feyenoord", "Ajax", "PSV Eindhoven", "FC Twente"],
-    answer: 0
-},
+    {
+        question: "1. What was the first club to win the Champions League competition?",
+        choices: ["Benfica", "Barcelona", "Inter-Milan", "Real Madrid"],
+        answer: 3
+    },
 
-{
-    question: "3. The first British club to win a Champions League competition was?",
-    choices: ["Manchester United", "Celtic", "Liverpool", "Aston Villa"],
-    answer: 1
-},
+    {
+        question: "2. Who was the first Dutch club to win the Champions League?",
+        choices: ["Feyenoord", "Ajax", "PSV Eindhoven", "FC Twente"],
+        answer: 0
+    },
 
-{
-    question: "4. Who was the second professional club to ever win a Champions League title?",
-    choices: ["Barcelona", "AC Milan", "Inter Milan", "Benfica"],
-    answer: 3
-},
+    {
+        question: "3. The first British club to win a Champions League competition was?",
+        choices: ["Manchester United", "Celtic", "Liverpool", "Aston Villa"],
+        answer: 1
+    },
 
-{
-    question: "5. Which of these clubs have never won a Champions League title in back-to-back seasons?",
-    choices: ["Benfica", "Bayern Munich", "Juventus", "Real Madrid"],
-    answer: 2
-},
+    {
+        question: "4. Who was the second professional club to ever win a Champions League title?",
+        choices: ["Barcelona", "AC Milan", "Inter Milan", "Benfica"],
+        answer: 3
+    },
 
-{
-    question: "6. Who has scored the most goals in Champions League history?",
-    choices: ["Crisitano Ronaldo", "Lionel Messi", "Raul", "Andriy Shevchenko"],
-    answer: 0,
-},
+    {
+        question: "5. Which of these clubs have never won a Champions League title in back-to-back seasons?",
+        choices: ["Benfica", "Bayern Munich", "Juventus", "Real Madrid"],
+        answer: 2
+    },
 
-{
-    question: "7. What is the only French club to ever win a Champions League Competition?",
-    choices: ["Lyon", "Marseille", "PSG", "AS Monaco"],
-    answer: 1
-},
+    {
+        question: "6. Who has scored the most goals in Champions League history?",
+        choices: ["Crisitano Ronaldo", "Lionel Messi", "Raul", "Andriy Shevchenko"],
+        answer: 0,
+    },
 
-{
-    question: "8. Which team won the first penalty shoot out to win the Champions League?",
-    choices: ["Liverpool", "Bayern Munich", "Juventus", "Barcelona"],
-    answer: 0,
-},
+    {
+        question: "7. What is the only French club to ever win a Champions League Competition?",
+        choices: ["Lyon", "Marseille", "PSG", "AS Monaco"],
+        answer: 1
+    },
 
-{
-    question: "9. Which of these teams have never won a Champions League Competition?",
-    choices: ["Hamburg", "Bayern Leverkusen", "Aston Villa", "Nottingham Forrest"],
-    answer: 1,
-},
+    {
+        question: "8. Which team won the first penalty shoot out to win the Champions League?",
+        choices: ["Liverpool", "Bayern Munich", "Juventus", "Barcelona"],
+        answer: 0,
+    },
 
-{
-    question: "10. Which player currently holds the record for most matches played in Champions League competitions?",
-    choices: ["Xavi Hernandez", "Zinedine Zidane", "Iker Casillas", "Ryan Giggs"],
-    answer: 2,
-}];
+    {
+        question: "9. Which of these teams have never won a Champions League Competition?",
+        choices: ["Hamburg", "Bayern Leverkusen", "Aston Villa", "Nottingham Forrest"],
+        answer: 1,
+    },
+
+    {
+        question: "10. Which player currently holds the record for most matches played in Champions League competitions?",
+        choices: ["Xavi Hernandez", "Zinedine Zidane", "Iker Casillas", "Ryan Giggs"],
+        answer: 2,
+    }];
 
 // Set up variables for game
 var userRight = 0;
@@ -174,7 +176,7 @@ function triviaCountdown() {
 // Set up timer countdown
 function decrement() {
     triviaTimer--;
-    $("#game-timer").html('<h3>Time Remaining: ' + triviaTimer + " Seconds</h3>");
+    $("#game-timer").html("<h3>Time Remaining: " + triviaTimer + " Seconds</h3>");
 
     // Set to automatic direct to result page when timer reaches zero
     if (triviaTimer === 0) {
